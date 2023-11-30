@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bet7uo2aspbmb"]
+[gd_scene load_steps=9 format=3 uid="uid://bet7uo2aspbmb"]
 
 [ext_resource type="PackedScene" uid="uid://c3oeu577w187v" path="res://Scenes/paddle.tscn" id="1_kvte7"]
 [ext_resource type="PackedScene" uid="uid://ddnr0s0sc1sx4" path="res://Scenes/ball.tscn" id="2_rv3xq"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://m6rsa8n8lm0g" path="res://Scenes/ui.tscn" id="5_1ovko"]
 [ext_resource type="Script" path="res://Scripts/brick_spawner.gd" id="6_cn722"]
 [ext_resource type="PackedScene" uid="uid://bbav61wfuxynt" path="res://Scenes/brick.tscn" id="7_ewn3a"]
+[ext_resource type="AudioStream" uid="uid://dsuw3mteet2ft" path="res://Scenes/cheeky_monkey_fun_app_playful_cheeky.mp3" id="8_c708p"]
 
 [node name="main" type="Node"]
 
@@ -44,6 +45,7 @@ collision_layer = 4
 
 [node name="DeathZone" parent="." instance=ExtResource("4_a3ct8")]
 position = Vector2(-5, 393)
+script = null
 
 [node name="BrickSpawner" type="Node" parent="." node_paths=PackedStringArray("spawn_start")]
 script = ExtResource("6_cn722")
@@ -52,3 +54,9 @@ spawn_start = NodePath("../Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, -255)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_c708p")
+volume_db = 7.839
+pitch_scale = 1.02
+autoplay = true

@@ -6,6 +6,9 @@ class_name UI
 @onready var game_lost_container = $GameLostContainer
 @onready var level_won_container = $LevelWonContainer
 
+@onready var music = $"../music/ball audio"
+
+
 func set_lifes(lifes: int):
 	lifes_label.text = "Lifes: %d" % lifes
 

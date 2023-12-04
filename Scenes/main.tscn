@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bet7uo2aspbmb"]
+[gd_scene load_steps=10 format=3 uid="uid://bet7uo2aspbmb"]
 
 [ext_resource type="PackedScene" uid="uid://c3oeu577w187v" path="res://Scenes/paddle.tscn" id="1_kvte7"]
 [ext_resource type="PackedScene" uid="uid://ddnr0s0sc1sx4" path="res://Scenes/ball.tscn" id="2_rv3xq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/brick_spawner.gd" id="6_cn722"]
 [ext_resource type="PackedScene" uid="uid://bbav61wfuxynt" path="res://Scenes/brick.tscn" id="7_ewn3a"]
 [ext_resource type="AudioStream" uid="uid://dsuw3mteet2ft" path="res://Scenes/cheeky_monkey_fun_app_playful_cheeky.mp3" id="8_c708p"]
+[ext_resource type="AudioStream" uid="uid://cqwlust3e78c7" path="res://Scenes/zapsplat_vehicles_bicycle_bell_broken_ping_001_78485.mp3" id="9_ff61p"]
 
 [node name="main" type="Node"]
 
@@ -55,8 +56,14 @@ spawn_start = NodePath("../Marker2D")
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, -255)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="music" type="Node" parent="."]
+
+[node name="bg" type="AudioStreamPlayer2D" parent="music"]
 stream = ExtResource("8_c708p")
 volume_db = 7.839
 pitch_scale = 1.02
 autoplay = true
+
+[node name="ball audio" type="AudioStreamPlayer2D" parent="music"]
+stream = ExtResource("9_ff61p")
+volume_db = 1.981
